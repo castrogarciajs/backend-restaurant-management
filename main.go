@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"os"
+)
 
 func main() {
-	fmt.Println("Hi, Go")
+	PORT := os.Getenv("PORT")
+
+	if PORT == "" {
+		PORT = "8000"
+	}
 }
