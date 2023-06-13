@@ -1,22 +1,21 @@
 package main
 
 import (
-	"net/http"
+	
 	"os"
-
 	"github.com/gin-gonic/gin"
+	"github.com/sebastian009w/backend-restaurant-management/platform/database"
+	"github.com/sebastian009w/backend-restaurant-management/pkg/routes"
+	"github.com/sebastian009w/backend-restaurant-management/pkg/middlewares"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 func main() {
+	
+	r := gin.New()
 	PORT := os.Getenv("PORT")
 
-	r := gin.New()
-
-	r.GET("/ping", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
+	r.Use(gin.Logger())
 
 	if PORT == "" {
 		PORT = "8000"
