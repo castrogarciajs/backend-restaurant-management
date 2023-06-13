@@ -24,7 +24,7 @@ func main() {
 	r.Use(gin.Logger())
 
 	routes.UserRoutes(r)
-	routes.Use(middlewares.Authentication())
+	r.Use(middlewares.Authentication())
 
 	routes.FoodRoutes(r)
 	routes.MenuRoutes(r)
