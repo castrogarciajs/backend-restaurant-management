@@ -30,5 +30,8 @@ func DbInstance() *mongo.Client {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println("Connection successfuly")
 	return client
 }
+
+var Client *mongo.Client = DbInstance()
