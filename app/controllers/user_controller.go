@@ -26,3 +26,11 @@ func Login() gin.HandlerFunc {
 
 	}
 }
+
+func HashPassword(password string) string {
+	return ""
+}
+
+func VerifyPassword(password, provider string) (bool, string) {
+	return true, ""
+}
