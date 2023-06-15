@@ -13,7 +13,7 @@ import (
 var foodCollection *mongo.Collection = database.OpenCollection(database.Client, "food")
 
 func main() {
-
+	// Application with Gin
 	r := gin.New()
 	PORT := os.Getenv("PORT")
 
